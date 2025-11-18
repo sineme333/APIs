@@ -1,0 +1,6 @@
+import requests
+q = requests.get("https://api.jikan.moe/v4/top/anime")
+q
+
+print(q.json()["data"][0]["title"]), (q.json()["data"][0]["url"])
+
