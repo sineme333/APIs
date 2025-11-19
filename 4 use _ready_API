@@ -1,14 +1,27 @@
 import requests
 import webbrowser
-q = requests.get("https://api.jikan.moe/v4/top/anime", proxies = {"http": "127.0.0.1:9090"})
+q = requests.get("https://api.jikan.moe/v4/top/anime")#, proxies = {"http": "127.0.0.1:9090"})
 q
-ww = str(q.json()["data"][0]["title"])
-ee = q.json()["data"][0]["url"]
+n = str(q.json()["data"][0]["title"])
+m = q.json()["data"][0]["url"]
 b = "one punch man"
 v = "one punch man comming"
-print(ww, ee)
+s = 7050706219
+k = "8313580173:AAEaHTfwjAL-uwMCnApSc7ZreY0K4ISOheI"
+d = "https://api.telegram.org/bot{k}/sendMessage"
+y = "chat_id"
+u = "text"
+print(n, m)
 #webbrowser.open(ee)
-if ww == b:
-    print(v)
-else:
-    print(ww, "comming")
+def t():
+    if n == b:
+        return (v, "with", m, "link comming uo")
+    else:
+        return (n, "with", m, "link comming up")
+t()
+requests.post(d, data = {y: s, u: f"{t()}"})
+#this API not working because telegram token problem
+
+
+
+
