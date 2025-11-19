@@ -1,13 +1,16 @@
 import requests
 import webbrowser
+from dotenv import load_dotenv
+import os
 q = requests.get("https://api.jikan.moe/v4/top/anime")#, proxies = {"http": "127.0.0.1:9090"})
 q
 n = str(q.json()["data"][0]["title"])
 m = q.json()["data"][0]["url"]
 b = "one punch man"
 v = "one punch man comming"
-s = "342394235(fake chatid)"
-k = "1123124:sdfhweufi(fake token key"
+load_dotenv()
+s = os.getenv("chat_id")
+k = os.getenv("telegram_token")
 d = "https://api.telegram.org/bot{k}/sendMessage"
 y = "chat_id"
 u = "text"
